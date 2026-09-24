@@ -20,11 +20,11 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
 
   const navLinks = [
     { label: 'Kollektionen', href: '#kollektionen' },
-    { label: 'Über Zeitstil', href: '#ueber-uns' },
+    { label: 'Über uns', href: '#ueber-uns' },
     { label: 'Einblicke', href: '#galerie' },
-    { label: 'Kundenstimmen', href: '#bewertungen' },
+    { label: 'Bewertungen', href: '#bewertungen' },
     { label: 'FAQ', href: '#faq' },
-    { label: 'Anfahrt & Zeiten', href: '#kontakt' },
+    { label: 'Kontakt', href: '#kontakt' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -40,35 +40,35 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'bg-[#faf8f5]/95 backdrop-blur-md shadow-sm border-b border-[#ede6dc] py-2.5'
-            : 'bg-[#faf8f5]/80 backdrop-blur-sm py-3.5 border-b border-[#ede6dc]/60'
+            ? 'bg-[#faf8f5]/95 backdrop-blur-md shadow-sm border-b border-[#ede6dc] py-2'
+            : 'bg-[#faf8f5]/90 backdrop-blur-sm py-3 border-b border-[#ede6dc]/70'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-3 xl:gap-6">
             
-            {/* Brand Logo & Tagline */}
-            <a href="#" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-[#c48b52] text-white flex items-center justify-center font-serif text-xl font-bold shadow-sm transition-transform duration-300 group-hover:scale-105">
+            {/* Brand Logo & Name */}
+            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#c48b52] text-white flex items-center justify-center font-serif text-lg sm:text-xl font-bold shadow-sm transition-transform duration-300 group-hover:scale-105 shrink-0">
                 Z
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#2d2623] leading-none">
+                <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#2d2623] leading-none whitespace-nowrap">
                   Zeitstil
                 </span>
-                <span className="text-[11px] tracking-wider uppercase text-[#7a6a5e] font-medium mt-0.5">
-                  Fashion · Wohnaccessoires &amp; more
+                <span className="text-[10px] sm:text-[11px] tracking-wider uppercase text-[#7a6a5e] font-medium mt-0.5 whitespace-nowrap hidden sm:inline-block">
+                  Fashion · Wohnen · Geschenke
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium text-[#5a504a] hover:text-[#c48b52] transition-colors cursor-pointer py-1"
+                  className="text-xs xl:text-sm font-medium text-[#5a504a] hover:text-[#c48b52] transition-colors cursor-pointer py-1 whitespace-nowrap"
                 >
                   {link.label}
                 </button>
@@ -76,31 +76,31 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             </nav>
 
             {/* Right Status & Action Buttons */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
               <OpeningStatus compact />
 
               <a
                 href="https://wa.me/4915222739532?text=Hallo%20Frau%20Dauendorffer,%20ich%20habe%20eine%20Frage%20zu%20einem%20Artikel%20bei%20Zeitstil."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 transition-all border border-[#25D366]/25"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20 transition-all border border-[#25D366]/25 whitespace-nowrap"
                 title="Per WhatsApp schreiben"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
+                <MessageCircle className="w-3.5 h-3.5 shrink-0" />
                 <span>WhatsApp</span>
               </a>
 
               <a
                 href="tel:+4922739915676"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#2d2623] text-white hover:bg-[#c48b52] transition-colors shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#2d2623] text-white hover:bg-[#c48b52] transition-colors shadow-2xs whitespace-nowrap"
               >
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-3.5 h-3.5 shrink-0" />
                 <span>02273 9915676</span>
               </a>
             </div>
 
             {/* Mobile Hamburger Toggle */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-1.5 lg:hidden">
               <a
                 href="tel:+4922739915676"
                 className="p-2 rounded-full bg-[#f0eae1] text-[#2d2623] hover:text-[#c48b52] transition-colors"
@@ -196,7 +196,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onOpenContact();
+                  onOpenContact('Allgemeine Frage');
                 }}
                 className="w-full py-2 text-xs text-center text-[#7a6a5e] underline underline-offset-2"
               >

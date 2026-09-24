@@ -24,23 +24,23 @@ export default function BoutiqueExperience({ onOpenContact }: BoutiqueExperience
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#f5d5b0]">
+                <div className="absolute bottom-6 left-6 right-6 text-white z-10">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#f5d5b0] block mb-1">
                     Inhaberin &amp; Gründerin
                   </span>
-                  <h4 className="font-serif text-xl sm:text-2xl font-bold mt-0.5">
+                  <h4 className="font-serif text-2xl sm:text-3xl font-bold leading-tight">
                     Ana Emese „Emi“ Dauendorffer
                   </h4>
-                  <p className="text-xs text-white/85 mt-1 font-sans">
+                  <p className="text-xs sm:text-sm text-white/90 mt-1.5 font-sans leading-relaxed">
                     „Mode und Schönes fürs Zuhause sind eine Herzensangelegenheit.“
                   </p>
                 </div>
               </div>
 
-              {/* Decorative Experience Badge */}
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white p-4 rounded-2xl shadow-lg border border-[#ede6dc] max-w-[210px]">
+              {/* Decorative Experience Badge placed at top-right without covering text */}
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white p-3.5 sm:p-4 rounded-2xl shadow-xl border border-[#ede6dc] max-w-[210px] z-20">
                 <div className="flex items-center gap-2 mb-1">
                   <Heart className="w-4 h-4 text-[#c48b52] fill-[#c48b52]" />
                   <span className="text-xs font-bold text-[#2d2623]">Inhabergeführt</span>
